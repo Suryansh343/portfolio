@@ -1,0 +1,21 @@
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+}
+
+
+a, button, input, textarea {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-block;
+}
+
+
+a, button {
+  margin: 6px;
+}

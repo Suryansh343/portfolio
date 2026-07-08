@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contact Suryansh">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Suryansh</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header role="banner">
+  <nav role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main role="main">
+  <h1 id="contact-title">Contact Me</h1>
+
+  <form aria-labelledby="contact-title" novalidate>
+    <fieldset>
+      <legend>Send a Message</legend>
+
+      <div>
+        <label for="name">Full Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          aria-required="true"
+        >
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          aria-required="true"
+        >
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5" 
+          required 
+          aria-required="true"
+        ></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+
+    </fieldset>
+  </form>
+</main>
+
+<footer role="contentinfo">
+  <p>&copy; 2026 Suryansh</p>
+</footer>
+
+</body>
+</html>
