@@ -20,6 +20,7 @@
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
   </nav>
+   <button onclick="toggleTheme()">Toggle Theme</button>
 </header>
 
 <main role="main">
@@ -72,5 +73,15 @@
   <p>&copy; 2026 Suryansh</p>
 </footer>
 
+
+<script>
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark"
+  );
+}
+</script>
 </body>
 </html>
