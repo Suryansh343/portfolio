@@ -20,23 +20,25 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-   <button onclick="toggleTheme()">Toggle Theme</button>
+   <button id="theme-toggle">🌙</button>
 </header>
 
 <main role="main">
   <h1>My Projects</h1>
 
-  <section>
-    <article aria-labelledby="proj1">
-      <h2 id="proj1">Portfolio Website</h2>
-      <p>A responsive personal portfolio built using HTML and CSS.</p>
-    </article>
+  <section class="projects-container">
+  
+  <div class="project-card">
+    <h2>Portfolio Website</h2>
+    <p>A responsive personal portfolio built using HTML and CSS.</p>
+  </div>
 
-    <article aria-labelledby="proj2">
-      <h2 id="proj2">SQL Database Project</h2>
-      <p>Database design and query optimization project.</p>
-    </article>
-  </section>
+  <div class="project-card">
+    <h2>SQL Database Project</h2>
+    <p>Database design and query optimization project.</p>
+  </div>
+
+</section>
 </main>
 
 <footer role="contentinfo">
@@ -45,13 +47,11 @@
 
 
 <script>
-function toggleTheme() {
-  const current = document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute(
-    "data-theme",
-    current === "dark" ? "light" : "dark"
-  );
-}
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
 </script>
 </body>
 </html>

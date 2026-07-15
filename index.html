@@ -10,15 +10,6 @@
   <title>Suryansh | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<script>
-function toggleTheme() {
-  const current = document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute(
-    "data-theme",
-    current === "dark" ? "light" : "dark"
-  );
-}
-</script>
 
 <body>
 
@@ -33,7 +24,7 @@ function toggleTheme() {
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <button onclick="toggleTheme()">Toggle Theme</button>
+  <button id="theme-toggle">🌙</button>
 </header>
 
 <main id="main-content" role="main">
@@ -61,6 +52,14 @@ function toggleTheme() {
 <footer role="contentinfo">
   <p>&copy; 2026 Suryansh Mani Singh</p>
 </footer>
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+</script>
 
 </body>
 </html>

@@ -1,147 +1,138 @@
-/* =========================
-   CSS VARIABLES (THEME)
-========================= */
+/* 🔹 CSS VARIABLES (Light + Dark Mode) */
 :root {
   --bg-color: #ffffff;
-  --text-color: #222;
-  --primary-color: #2563eb;
-  --card-bg: #f3f4f6;
-  --border-radius: 8px;
+  --text-color: #222222;
+  --primary-color: #4f46e5;
+  --card-bg: #f5f5f5;
 }
 
-/* Dark Theme */
-[data-theme="dark"] {
+body.dark {
   --bg-color: #121212;
-  --text-color: #f9f9f9;
+  --text-color: #ffffff;
   --card-bg: #1e1e1e;
 }
 
-/* =========================
-   GLOBAL RESET
-========================= */
+/* 🔹 GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BASE STYLING (MOBILE FIRST)
-========================= */
+/* 🔹 BODY */
 body {
   font-family: Arial, sans-serif;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
+  transition: 0.3s;
   line-height: 1.6;
-
-  /* GRID LAYOUT */
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  min-height: 100vh;
 }
 
-/* =========================
-   HEADER + NAV (FLEXBOX)
-========================= */
+/* 🔹 HEADER (Flexbox used here ✅) */
 header {
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav ul {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--card-bg);
 }
 
+/* 🔹 NAVIGATION */
 nav a {
-  color: white;
+  margin-right: 15px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  font-weight: bold;
 }
 
-/* =========================
-   MAIN CONTENT (GRID)
-========================= */
-main {
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
+nav a:hover {
+  color: var(--primary-color);
 }
 
-section {
-  background: var(--card-bg);
-  padding: 1rem;
-  border-radius: var(--border-radius);
-}
-
-/* =========================
-   PROJECTS GRID
-========================= */
-.projects-container {
-  display: grid;
-  gap: 1rem;
-}
-
-/* =========================
-   FORM (FLEXBOX)
-========================= */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-input,
-textarea,
-button {
-  padding: 0.6rem;
-  font-size: 1rem;
-}
-
-button {
-  background: var(--primary-color);
-  color: white;
+/* 🔹 DARK MODE BUTTON */
+#theme-toggle {
+  padding: 8px 12px;
   border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #ddd;
+/* 🔹 SECTIONS */
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* =========================
-   TABLET (>=768px)
-========================= */
+/* 🔹 HEADINGS */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* 🔹 PROJECTS GRID (CSS GRID used here ✅) */
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* 🔹 PROJECT CARD */
+.project-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* 🔹 HOVER EFFECT */
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 CONTACT FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* 🔹 BUTTON */
+button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 🔹 TABLET VIEW */
 @media (min-width: 768px) {
-  main {
+  .projects-container {
     grid-template-columns: 1fr 1fr;
   }
 
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
+  h1 {
+    font-size: 2.5rem;
   }
 }
 
-/* =========================
-   DESKTOP (>=1024px)
-========================= */
+/* 🔹 DESKTOP VIEW */
 @media (min-width: 1024px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .projects-container {
-    grid-template-columns: repeat(3, 1fr);
+  section {
+    padding: 60px;
   }
 }
