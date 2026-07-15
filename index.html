@@ -10,6 +10,15 @@
   <title>Suryansh | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+<script>
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark"
+  );
+}
+</script>
 
 <body>
 
@@ -24,6 +33,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+  <button onclick="toggleTheme()">Toggle Theme</button>
 </header>
 
 <main id="main-content" role="main">
